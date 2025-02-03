@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:expressions/expressions.dart'; // External package for expression evaluation
 
@@ -56,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
           final expression = Expression.parse(_expression);
           final evaluator = const ExpressionEvaluator();
           final result = evaluator.eval(expression, {});
-          
+
           _result = ' = $result';
         } catch (e) {
           _result = 'Error. Do it again....';
@@ -149,6 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 children: [
                   _buildButton('C'),
+                  _buildButton('%'),
                 ],
               ),
             ],
